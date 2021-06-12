@@ -6,12 +6,25 @@ public class LaserWeapon : MonoBehaviour
 {
     public Transform firingPos;
 
+    public LineRenderer laserRenderer;
+
+    public Transform test;
+
+    private void Start()
+    {
+        laserRenderer.useWorldSpace = true;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             ShootRayCast();
         }
+
+        Vector2 cursorPos = GameManager.instance.cursorWorldposition;
+        laserRenderer.SetPosition(1, new Vector3(cursorPos.x, cursorPos.y, 0));
+        laserRenderer.SetPosition(0, firingPos.position);
     }
 
     void ShootRayCast()
@@ -20,9 +33,13 @@ public class LaserWeapon : MonoBehaviour
         Vector2 cursorPos = GameManager.instance.cursorWorldposition;
 
         float distance = (cursorPos - (Vector2)firingPos.position).magnitude;
-        Vector2 dir = (cursorPos - (Vector2)firingPos.position).normalized;
+        Vector2 dir = (cursorPos - (Vector2)firingPos.position);
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(firingPos.position, dir, distance);
+        //laserRenderer.SetPosition(1, new Vector3(cursorPos.x, cursorPos.y, 0));
+     
+
+
+        RaycastHit2D[] hits = Physics2D.RaycastAll(firingPos.position, dir.normalized, distance);
 
         if (hits.Length > 0)
         {
