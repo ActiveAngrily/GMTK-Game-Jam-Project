@@ -39,7 +39,7 @@ public class Jumping : MonoBehaviour
 
         grounded = checker.IsChecked();
 
-        Debug.Log(JumpNum);
+        //Debug.Log(JumpNum);
 
         JumpInput();
     }

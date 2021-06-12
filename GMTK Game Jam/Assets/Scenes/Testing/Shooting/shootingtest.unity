@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af383884aa6c7eb459704295e1b89058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickPosition: {fileID: 0}
+  firingPos: {fileID: 888164978}
 --- !u!1 &1708503037
 GameObject:
   m_ObjectHideFlags: 0
