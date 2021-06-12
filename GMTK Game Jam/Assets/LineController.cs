@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LineController : MonoBehaviour
 {
@@ -16,6 +17,25 @@ public class LineController : MonoBehaviour
 
     float fpsCounter;
 
+    [SerializeField]
+    UnityEvent onCycleReached;
+
+
+    [SerializeField]
+    UnityEvent onX_thReached;
+
+
+    [SerializeField]
+    UnityEvent onLineRendererActive;
+
+
+    [SerializeField]
+    int cycleNum;
+
+    [SerializeField]
+    float duration;
+
+    uint cycles = 0;
 
     private void Awake()
     {
@@ -36,6 +56,30 @@ public class LineController : MonoBehaviour
             lineRenderer.material.SetTexture("_MainTex", textures[textureIndex]);
 
             fpsCounter = 0f;
+            cycles++;
+            onCycleReached.Invoke();
         }
+
+
+        if (cycles >= cycleNum)
+            onX_thReached.Invoke();
+    }
+
+   
+
+    public void SetLinerenderertActive()
+    {
+        StopAllCoroutines();
+        lineRenderer.enabled = true;
+        textureIndex = 0;
+        onLineRendererActive.Invoke();
+        StartCoroutine(Disable(duration));
+    }
+
+    IEnumerator Disable(float t)
+    {
+        yield return new WaitForSeconds(t);
+        Debug.Log("disabling laser");
+        lineRenderer.enabled = false;
     }
 }
