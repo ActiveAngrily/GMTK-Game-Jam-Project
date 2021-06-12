@@ -1,0 +1,112 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.5f1 (8095aa901b9b) revision 8426922'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19043.1052; Version 2009; 64bit' Language: 'en' Physical Memory: 8001 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.5f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/Fridge/GMTK-Game-Jam-Project/GMTK Game Jam
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+49768
+Successfully changed project path to: E:/Fridge/GMTK-Game-Jam-Project/GMTK Game Jam
+E:/Fridge/GMTK-Game-Jam-Project/GMTK Game Jam
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 35.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.5f1 (8095aa901b9b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/Fridge/GMTK-Game-Jam-Project/GMTK Game Jam/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce MX250 (ID=0x1d13)
+    Vendor:   
+    VRAM:     1983 MB
+    Driver:   27.21.14.6231
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56592
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001869 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 59.86 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.835 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001084 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 36.25 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.930 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.35 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1969 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.1 MB.
+System memory in use after: 91.1 MB.
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 2411.
+Total: 1.964000 ms (FindLiveObjects: 0.215500 ms CreateObjectMapping: 0.102300 ms MarkObjects: 1.536400 ms  DeleteObjects: 0.109200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Prefabs/RoboPlayer.prefab
+  artifactKey: Guid(bb6b2e45072f4af44a5ed07d5e7d0876) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/RoboPlayer.prefab using Guid(bb6b2e45072f4af44a5ed07d5e7d0876) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fa67fffda1ba121f38b7a7fc00fcb90') in 0.105682 seconds
+  Import took 0.111990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.340651 seconds.
+  path: Assets/Prefabs/Robot 1.prefab
+  artifactKey: Guid(499b1088895f96d47aa66198db8e535a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Robot 1.prefab using Guid(499b1088895f96d47aa66198db8e535a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8022a31271615c76927e94708095b2f') in 0.018398 seconds
+  Import took 0.022409 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.428179 seconds.
+  path: Assets/Prefabs/Enemy2.prefab
+  artifactKey: Guid(8c27e5165150dd646b978a91c274aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy2.prefab using Guid(8c27e5165150dd646b978a91c274aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb7b371a9ac38ee92b12c4243948454b') in 0.019094 seconds
+  Import took 0.022619 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.511310 seconds.
+  path: Assets/Scripts/RobotFollowingScript.cs
+  artifactKey: Guid(f52496cbb59c8c2469eabc9c26564aa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RobotFollowingScript.cs using Guid(f52496cbb59c8c2469eabc9c26564aa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ace1aa3a17124997c05ede80fc2759e') in 0.023894 seconds
+  Import took 0.030708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003089 seconds.
+  path: Assets/Scripts/RobotFollowingScript.cs
+  artifactKey: Guid(f52496cbb59c8c2469eabc9c26564aa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RobotFollowingScript.cs using Guid(f52496cbb59c8c2469eabc9c26564aa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ace1aa3a17124997c05ede80fc2759e') in 0.002831 seconds
+  Import took 0.009165 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
