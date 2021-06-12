@@ -1,9 +1,10 @@
+
 using UnityEngine;
 using System.Collections;
 //Note this line, if it is left out, the script won't know that the class 'Path' exists and it will throw compiler errors
 //This line should always be present at the top of scripts which use pathfinding
 using Pathfinding;
-public class Enemy2AI : MonoBehaviour
+public class ChaserAI : MonoBehaviour
 {
     Rigidbody2D rb;
     //The point to move to
@@ -23,9 +24,9 @@ public class Enemy2AI : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         seeker = GetComponent<Seeker>();
-       // controller = GetComponent<CharacterController>();
+        // controller = GetComponent<CharacterController>();
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
-        
+
 
         InvokeRepeating("GenerateNewPath", 0f, pathgenerationRate);
     }
@@ -59,7 +60,7 @@ public class Enemy2AI : MonoBehaviour
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
         dir *= speed * Time.deltaTime;
         rb.AddForce(dir);
-        
+
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
         if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
@@ -69,3 +70,24 @@ public class Enemy2AI : MonoBehaviour
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
