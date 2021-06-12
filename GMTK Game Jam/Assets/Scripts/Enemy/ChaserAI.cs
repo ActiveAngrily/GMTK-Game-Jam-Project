@@ -1,11 +1,10 @@
 
 using UnityEngine;
 using System.Collections;
-//Note this line, if it is left out, the script won't know that the class 'Path' exists and it will throw compiler errors
-//This line should always be present at the top of scripts which use pathfinding
 using Pathfinding;
 public class ChaserAI : MonoBehaviour
 {
+    Animator anim;
     Rigidbody2D rb;
     //The point to move to
     public Transform targetPoint;
@@ -22,6 +21,7 @@ public class ChaserAI : MonoBehaviour
     public float pathgenerationRate = 4f;
     public void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         seeker = GetComponent<Seeker>();
         // controller = GetComponent<CharacterController>();
@@ -36,7 +36,7 @@ public class ChaserAI : MonoBehaviour
     }
     public void OnPathComplete(Path p)
     {
-        Debug.Log("Yay, we got a path back. Did it have an error? " + p.error);
+        //Debug.Log("Yay, we got a path back. Did it have an error? " + p.error);
         if (!p.error)
         {
             path = p;
@@ -53,11 +53,19 @@ public class ChaserAI : MonoBehaviour
         }
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            Debug.Log("End Of Path Reached");
+            //Debug.Log("End Of Path Reached");
             return;
         }
         //Direction to the next waypoint
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        if (dir.x >= 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
         dir *= speed * Time.deltaTime;
         rb.AddForce(dir);
 
@@ -67,6 +75,25 @@ public class ChaserAI : MonoBehaviour
         {
             currentWaypoint++;
             return;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Buddy")
+        {
+            anim.SetBool("Attacking", true);
+        }
+        if (collision.tag == "Laser")
+        {
+            anim.SetTrigger("GetDamaged");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Buddy")
+        {
+            Debug.Log("check");
+            anim.SetBool("Attacking", false);
         }
     }
 }
