@@ -9,7 +9,7 @@ using Pathfinding;
      *    Zap to another place(let's oscillate to 2 places)
      *    shoot while idle
 */
-public class Enemy1AI : MonoBehaviour
+public class ZapperAI : MonoBehaviour
 {
     /*
     
@@ -127,18 +127,20 @@ public class Enemy1AI : MonoBehaviour
     private void GenerateNewPath()
     {
         Debug.Log(i);
-        if(i < targetPoint.Length-1)
-        {   
+        if (i < targetPoint.Length - 1)
+        {
             seeker.StartPath(transform.position, targetPoint[i].localPosition, OnPathComplete);
             i++;
-        } else{
+        }
+        else
+        {
             i = 0;
             seeker.StartPath(transform.position, targetPoint[i].localPosition, OnPathComplete);
         }
     }
     public void OnPathComplete(Path p)
     {
-       // Debug.Log("Yay, we got a path back. Did it have an error? " + p.error);
+        // Debug.Log("Yay, we got a path back. Did it have an error? " + p.error);
         if (!p.error)
         {
             path = p;
@@ -155,7 +157,7 @@ public class Enemy1AI : MonoBehaviour
         }
         if (currentWaypoint >= path.vectorPath.Count)
         {
-       //     Debug.Log("End Of Path Reached");
+            //     Debug.Log("End Of Path Reached");
             return;
         }
         //Direction to the next waypoint
