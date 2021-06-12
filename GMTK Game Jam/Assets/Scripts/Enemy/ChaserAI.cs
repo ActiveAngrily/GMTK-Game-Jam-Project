@@ -4,6 +4,7 @@ using System.Collections;
 using Pathfinding;
 public class ChaserAI : MonoBehaviour
 {
+    Animator anim;
     Rigidbody2D rb;
     //The point to move to
     public Transform targetPoint;
@@ -20,6 +21,7 @@ public class ChaserAI : MonoBehaviour
     public float pathgenerationRate = 4f;
     public void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         seeker = GetComponent<Seeker>();
         // controller = GetComponent<CharacterController>();
@@ -56,6 +58,14 @@ public class ChaserAI : MonoBehaviour
         }
         //Direction to the next waypoint
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        if (dir.x >= 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
         dir *= speed * Time.deltaTime;
         rb.AddForce(dir);
 
@@ -65,6 +75,25 @@ public class ChaserAI : MonoBehaviour
         {
             currentWaypoint++;
             return;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Buddy")
+        {
+            anim.SetBool("Attacking", true);
+        }
+        if (collision.tag == "Laser")
+        {
+            anim.SetTrigger("GetDamaged");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Buddy")
+        {
+            Debug.Log("check");
+            anim.SetBool("Attacking", false);
         }
     }
 }
