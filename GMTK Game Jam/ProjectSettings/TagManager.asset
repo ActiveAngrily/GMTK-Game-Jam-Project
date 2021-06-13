@@ -7,6 +7,8 @@ TagManager:
   - Platform
   - Buddy
   - ElectricOcean
+  - Chasers
+  - Turrets
   layers:
   - Default
   - TransparentFX
