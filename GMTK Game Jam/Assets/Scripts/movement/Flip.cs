@@ -36,7 +36,7 @@ public class Flip : MonoBehaviour
         }
 
        
-        if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Mathf.Round(Input.GetAxisRaw("Horizontal")) == 0)
+        if(Input.GetMouseButton(0) || Input.GetMouseButton(1) || Mathf.Round(Input.GetAxisRaw("Horizontal")) == 0)
         {
 
             if (hand.localEulerAngles.z < 360 && hand.localEulerAngles.z > 180)
