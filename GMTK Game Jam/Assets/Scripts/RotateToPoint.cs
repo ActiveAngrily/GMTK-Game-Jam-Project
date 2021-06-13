@@ -24,15 +24,20 @@ public class RotateToPoint : MonoBehaviour
 
     private void Update()
     {
-        targetPos = target.position;
-        if (pointToCursor)
-            targetPos = cam.ScreenToWorldPoint(Input.mousePosition);
+        if (target == null)
+        {
+            //targetPos = target.position;
+            if (pointToCursor)
+                targetPos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+
+        } else
+        {
+            targetPos = target.position;
+        }
 
         Vector2 dir = (targetPos - (Vector2)transform.position).normalized;
 
         transform.up = dir;
-
-
-
     }
 }
