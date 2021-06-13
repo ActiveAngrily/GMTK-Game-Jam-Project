@@ -33,6 +33,7 @@ public class RobotBehaviour : MonoBehaviour
         Idle,
         Chased,
     }
+    Animator anim;
     State state;
     Rigidbody2D rb;
     //The point to move to
@@ -52,6 +53,7 @@ public class RobotBehaviour : MonoBehaviour
     public float chasedpathgenerationRate = .5f;
     public void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         seeker = GetComponent<Seeker>();
         // controller = GetComponent<CharacterController>();
@@ -62,10 +64,13 @@ public class RobotBehaviour : MonoBehaviour
     }
     private void GenerateNewPath()
     {
+        anim.SetBool("isChased", false);
         seeker.StartPath(transform.position, PointofFollow.position, OnPathComplete);
     }
     private void GenerateChasedPath()
     {
+
+        anim.SetBool("isChased", true);
         seeker.StartPath(transform.position, endofScreen.position, OnPathComplete);
     }
     public void OnPathComplete(Path p)
@@ -81,6 +86,7 @@ public class RobotBehaviour : MonoBehaviour
     bool changeState = false;
     public void Update()
     {
+        
         if (state == State.Chased && !changeState)
         {
             CancelInvoke("GenerateNewPath");
