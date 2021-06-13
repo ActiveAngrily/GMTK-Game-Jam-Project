@@ -32,7 +32,6 @@ public class RobotBehaviour : MonoBehaviour
     {
         Idle,
         Chased,
-
     }
     State state;
     Rigidbody2D rb;
