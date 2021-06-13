@@ -5,6 +5,7 @@ using UnityEngine;
 public class Flip : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Transform hand;
 
     [SerializeField] Transform target;
 
@@ -24,15 +25,40 @@ public class Flip : MonoBehaviour
             facingRight = false;
 
 
-        if (facingRight)
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            target.localRotation = Quaternion.Euler(target.localRotation.x, 180, target.localRotation.z);
+            FlipPlayer(Direction.Right);
         }
-        else
+
+        if(Input.GetKeyDown(KeyCode.A))
         {
-            target.localRotation = Quaternion.Euler(target.localRotation.x, 0, target.localRotation.z);
+            FlipPlayer(Direction.Left);
+        }
+
+       
+        if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Mathf.Round(Input.GetAxisRaw("Horizontal")) == 0)
+        {
+
+            if (hand.localEulerAngles.z < 360 && hand.localEulerAngles.z > 180)
+            {
+                FlipPlayer(Direction.Right);
+            }
+
+            if ((hand.localEulerAngles.z < 360 && hand.localEulerAngles.z > 180) == false)
+            {
+                FlipPlayer(Direction.Left);
+            }
         }
 
 
+    }
+
+    public void FlipPlayer(Direction direction)
+    {
+        float y = 0;
+        if (direction == Direction.Right)
+            y = 180;
+
+        target.localRotation = Quaternion.Euler(target.localRotation.x, y, target.localRotation.z);
     }
 }
