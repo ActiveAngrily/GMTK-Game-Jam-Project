@@ -9,8 +9,10 @@ public class DialogueController : MonoBehaviour
     private int index;
     public float typingspeed = 0.02f;
     public float waitTime = 5f;
-    private void Start()
+    public bool dialoguesEnded = false; 
+    public void StartDialogues()
     {
+        Debug.Log("Dialogues Started");
         StartCoroutine(Type());
     }
     IEnumerator Type()
@@ -33,6 +35,7 @@ public class DialogueController : MonoBehaviour
             StartCoroutine(Type());
         } else {
             textDisplay.text = "";
+            dialoguesEnded = true;
         }
     }
 }
