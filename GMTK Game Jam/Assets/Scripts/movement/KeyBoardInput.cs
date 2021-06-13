@@ -7,8 +7,8 @@ public class KeyBoardInput : MonoBehaviour, IInput
     public float Horizontal { get; private set; }
     public float Vertical { get; private set; }
 
-    [SerializeField] float horizontalMultiplier = 1f;
-    [SerializeField] float verticalMultiplier = 1f;
+    public float horizontalMultiplier = 1f;
+    public float verticalMultiplier = 1f;
 
     void Update()
     {
