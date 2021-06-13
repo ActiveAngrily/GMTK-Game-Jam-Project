@@ -18,12 +18,13 @@ public class RotateToPoint : MonoBehaviour
         cam = Camera.main;
 
    
-        targetPos = target.position;
+    
 
     }
 
     private void Update()
     {
+        targetPos = target.position;
         if (pointToCursor)
             targetPos = cam.ScreenToWorldPoint(Input.mousePosition);
 

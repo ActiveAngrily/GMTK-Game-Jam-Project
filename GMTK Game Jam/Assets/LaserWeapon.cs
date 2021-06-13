@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class LaserWeapon : MonoBehaviour
 {
     public Transform firingPos;
@@ -17,7 +18,7 @@ public class LaserWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             ShootRayCast();
         }

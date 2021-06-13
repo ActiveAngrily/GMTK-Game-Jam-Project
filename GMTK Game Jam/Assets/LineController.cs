@@ -79,7 +79,7 @@ public class LineController : MonoBehaviour
     IEnumerator Disable(float t)
     {
         yield return new WaitForSeconds(t);
-        Debug.Log("disabling laser");
+       // Debug.Log("disabling laser");
         lineRenderer.enabled = false;
     }
 }
